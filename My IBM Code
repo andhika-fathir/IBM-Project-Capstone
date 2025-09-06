@@ -1,0 +1,21 @@
+# model.yaml is an open standard for defining cross-platform, composable AI models
+# Learn more at https://modelyaml.org
+model: ibm/granite-3.1-8b
+base:
+  - key: lmstudio-community/granite-3.1-8b-instruct-gguf
+    sources:
+      - type: huggingface
+        user: lmstudio-community
+        repo: granite-3.1-8b-instruct-GGUF
+metadataOverrides:
+  domain: llm
+  architectures:
+    - granite
+  compatibilityTypes:
+    - gguf
+  paramsStrings:
+    - 8B
+  minMemoryUsageBytes: 4600000000
+  contextLengths:
+    - 131072
+  vision: false
